@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search Pixabay photos and explore them in a full-size gallery."
+    />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <title>Image search</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="visually-hidden">Image search</h1>
+      <form class="form">
+        <label>
+          <span class="visually-hidden">Search images</span>
+          <input
+            type="text"
+            name="search-text"
+            placeholder="Search images..."
+            autocomplete="off"
+            required
+          />
+        </label>
+        <button type="submit">Search</button>
+      </form>
+      <div class="loading" role="status" aria-live="polite" aria-hidden="true">
+        <span class="loader" aria-hidden="true"></span>
+        <span>Loading images, please wait...</span>
+      </div>
+      <ul
+        class="gallery"
+        aria-label="Image search results"
+        aria-busy="false"
+      ></ul>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

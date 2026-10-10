@@ -93,6 +93,8 @@ test('sends required parameters, shows loader, renders cards and opens lightbox'
   await page.locator('.gallery-link').first().click();
   await expect(page.locator('.sl-wrapper')).toBeVisible();
   await expect(page.locator('.sl-image img')).toHaveAttribute('src', imageUrl);
+  await expect(page.locator('.sl-caption')).toHaveText('blue sky');
+  await expect(page.locator('.sl-caption')).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(page.locator('.sl-wrapper')).toBeHidden();
 });

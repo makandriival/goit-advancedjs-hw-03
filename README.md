@@ -8,12 +8,16 @@ A Vite application using Axios, Pixabay, iziToast, SimpleLightbox and an adapted
 Requires Node.js 22.12 or newer.
 
 1. Run `npm ci`.
-2. Copy `.env.example` to `.env`.
+2. Copy `.env.example` to `.env` in the repository root (next to `package.json`).
 3. Get your own key from [Pixabay](https://pixabay.com/api/docs/) and set
    `VITE_PIXABAY_API_KEY` in `.env`.
 4. Run `npm run dev` and open the URL shown by Vite.
 
-Restart Vite after changing `.env`. Without a key, searches display a configuration
+Vite explicitly loads environment files from the repository root, although its
+HTML/source root is `src`. Restart Vite after changing `.env` or its configuration.
+For `npm run preview`, rebuild with `npm run build` first: environment values are
+embedded at build time.
+Without a key, searches display a configuration
 error without sending an invalid HTTP request. Do not commit `.env`.
 Vite embeds `VITE_` values in the browser bundle, so the deployed Pixabay key is
 visible to visitors; it is not a server-side secret.
